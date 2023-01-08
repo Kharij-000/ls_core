@@ -7,8 +7,12 @@ def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
+#def valid_number?(num)
+  #num.to_i != 0 # doesn't allow for zero to be considered as a valid number
+#end
+
 def valid_number?(num)
-  num.to_i != 0 # doesn't allow for zero to be considered as a valid number
+  num.to_i == 0 || num.to_i != 0 
 end
 
 def operation_to_message(op)
