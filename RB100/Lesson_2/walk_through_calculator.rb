@@ -7,13 +7,13 @@ def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
-#def valid_number?(num)
-  #num.to_i != 0 # doesn't allow for zero to be considered as a valid number
-#end
-
 def valid_number?(num)
   num.to_i == 0 || num.to_i != 0 
 end
+
+def number?(num)
+  num.to_f.to_s == num || num.to_i.to_s == num
+end 
 
 def operation_to_message(op)
   case op
@@ -47,7 +47,7 @@ loop do
     prompt("Whats the first number?")
     number1 = Kernel.gets().chomp()
 
-    if valid_number?(number1)
+    if valid_number?(number1) && number?(number1)
       break
     else
       prompt("Please Enter a Valid Number")
